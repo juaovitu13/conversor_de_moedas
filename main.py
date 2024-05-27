@@ -1,4 +1,5 @@
 import customtkinter
+from pegar_moedas import nomes_moedas
 
 # criar e configurar a janela
 customtkinter.set_appearance_mode("dark")
@@ -22,9 +23,10 @@ botao_converter = customtkinter.CTkButton(janela, text="Converter", command=conv
 
 lista_moedas = customtkinter.CTkScrollableFrame(janela)
 
-moedas_disponiveis = ["USD: Dólar americano", "BRL: Real brasileiro", "BTC: Bitcoin"]
-for moeda in moedas_disponiveis:
-    texto_moeda = customtkinter.CTkLabel(lista_moedas, text=moeda)
+moedas_disponiveis = nomes_moedas()
+for codigo_moeda in moedas_disponiveis:
+    nome_moeda = moedas_disponiveis[codigo_moeda]
+    texto_moeda = customtkinter.CTkLabel(lista_moedas, text=f"{codigo_moeda}: {nome_moeda}")
     texto_moeda.pack()
 
 
