@@ -20,6 +20,13 @@ def converter_moeda():
 
 botao_converter = customtkinter.CTkButton(janela, text="Converter", command=converter_moeda)
 
+lista_moedas = customtkinter.CTkScrollableFrame(janela)
+
+moedas_disponiveis = ["USD: Dólar americano", "BRL: Real brasileiro", "BTC: Bitcoin"]
+for moeda in moedas_disponiveis:
+    texto_moeda = customtkinter.CTkLabel(lista_moedas, text=moeda)
+    texto_moeda.pack()
+
 
 # colocar todos os elementos na tela
 titulo.pack(padx=10, pady=10)
@@ -28,6 +35,7 @@ campo_moeda_origem.pack(padx=10)
 texto_moeda_destino.pack(padx=10, pady=10)
 campo_moeda_destino.pack(padx=10)
 botao_converter.pack(padx=10, pady=10)
+lista_moedas.pack(padx=10, pady=10)
 
 # rodar a janela
 janela.mainloop()
