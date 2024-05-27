@@ -15,12 +15,19 @@ texto_moeda_destino = customtkinter.CTkLabel(janela, text="Selecione a moeda de 
 campo_moeda_origem = customtkinter.CTkOptionMenu(janela, values=["USD", "BRL", "EUR", "BTC"])
 campo_moeda_destino = customtkinter.CTkOptionMenu(janela, values=["USD", "BRL", "EUR", "BTC"])
 
+def converter_moeda():
+    print("Converter moeda")
+
+botao_converter = customtkinter.CTkButton(janela, text="Converter", command=converter_moeda)
+
+
 # colocar todos os elementos na tela
 titulo.pack(padx=10, pady=10)
 texto_moeda_origem.pack(padx=10, pady=10)
 campo_moeda_origem.pack(padx=10)
 texto_moeda_destino.pack(padx=10, pady=10)
 campo_moeda_destino.pack(padx=10)
+botao_converter.pack(padx=10, pady=10)
 
 # rodar a janela
 janela.mainloop()
