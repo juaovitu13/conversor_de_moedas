@@ -52,6 +52,7 @@ campo_moeda_origem.pack(padx=10)
 texto_moeda_destino.pack(padx=10, pady=10)
 campo_moeda_destino.pack(padx=10)
 botao_converter.pack(padx=10, pady=10)
+texto_cotacao_moeda.pack(padx=10, pady=10)
 lista_moedas.pack(padx=10, pady=10)
 
 # rodar a janela
