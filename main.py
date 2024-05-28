@@ -1,5 +1,5 @@
 import customtkinter
-from pegar_moedas import nomes_moedas
+from pegar_moedas import nomes_moedas, conversoes_disponiveis
 
 # criar e configurar a janela
 customtkinter.set_appearance_mode("dark")
@@ -8,13 +8,16 @@ customtkinter.set_default_color_theme("dark-blue")
 janela = customtkinter.CTk()
 janela.geometry("500x500")
 
+dic_conversoes_disponiveis = conversoes_disponiveis()
+
 # criar os botões, textos e outros elementos
 titulo = customtkinter.CTkLabel(janela, text="Conversor de Moedas", font=("",20))
 texto_moeda_origem = customtkinter.CTkLabel(janela, text="Selecione a moeda de origem")
 texto_moeda_destino = customtkinter.CTkLabel(janela, text="Selecione a moeda de destino")
 
-campo_moeda_origem = customtkinter.CTkOptionMenu(janela, values=["USD", "BRL", "EUR", "BTC"])
-campo_moeda_destino = customtkinter.CTkOptionMenu(janela, values=["USD", "BRL", "EUR", "BTC"])
+campo_moeda_origem = customtkinter.CTkOptionMenu(janela, values=list(dic_conversoes_disponiveis.keys()),
+                                                 command=carregar_moedas_destino)
+campo_moeda_destino = customtkinter.CTkOptionMenu(janela, values=["Selecione uma moeda de origem"])
 
 def converter_moeda():
     print("Converter moeda")
